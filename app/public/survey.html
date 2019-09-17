@@ -10,13 +10,15 @@
 
   <script src="https://code.jquery.com/jquery.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 
-  <!--for the modal-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <!-- chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
 
 </head>
@@ -163,61 +165,74 @@
 
 
   </div>
+
+
+  <!--modal-->
+
   <div id="results-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+      <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center"><strong>Your Best Match</strong></h2>
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title text-center"><strong>Your Best Match</strong></h2>
+          </div>
+          <div class="modal-body text-center">
+            <h2 id="match-name"></h2>
+            <img class="img-fluid" style="max-width: 100%; height: auto" id="match-img" src="" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modal-body text-center">
-          <h2 id="match-name"></h2>
-          <img class="img-fluid" style="max-width: 100%; height: auto" id="match-img" src="" alt="">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+  
       </div>
-
     </div>
-  </div>
-
-  <!--Modal-->
-  <div id="results-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"></button>
-          <h2 class="modal-title text-center"><strong>Your Best Match!!!</strong></h2>
-        </div>
-        <div class="modal-body text-center">
-          <h2 id="match-name"></h2>
-          <img class="img-fluid" style="max-width: 100%; height: auto" id="match-img" src="" alt="">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-
-
 
   </div>
 
   <script type="text/javascript">
 
+    //css
+    var config = {
+      ".chosen-select": {},
+      ".chosen-select-deselect": {
+        allow_single_deselect: true
+      },
+      ".chosen-select-no-single": {
+        disable_search_threshold: 10
+      },
+      ".chosen-select-no-results": {
+        no_results_text: "Oops, nothing found!"
+      },
+      ".chosen-select-width": {
+        width: "95%"
+      }
+    };
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
 
-    $("#submit").on("click", function (event) {
+    // submit button
+    $("#submit").on("click", function(event) {
       event.preventDefault();
-
-      var newUser = {
+      // validation
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        $(".chosen-select").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
+      if (validateForm()) {
+        var userData = {
           name: $("#name").val(),
           photo: $("#photo").val(),
           scores: [
@@ -233,21 +248,21 @@
             $("#q10").val()
           ]
         };
-        
-      $.post("/api/friends", newUser, function (data) {
-        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-        $("#match-name").text(data.name);
-        $("#match-img").attr("src", data.photo);
-        // Show the modal with the best match
-        $("#results-modal").modal("toggle");
-      });
-    // } else {
-    //     alert("Please fill out all fields before submitting!");
-    //   }
+        // AJAX
+        $.post("/api/friends", userData, function(data) {
+         
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
+          
+          // best match
+          $("#results-modal").modal("toggle");
+          console.log(data.name);
+          console.log(data.photo);
+        });
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
     });
-
-
-
   </script>
 
 </body>
