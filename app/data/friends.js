@@ -3,52 +3,52 @@
 var friendsArray = [
     {
         "name": "Anna",
-        "photo": "https://www.google.com/imgres?imgurl=https%3A%2F%2Flumiere-a.akamaihd.net%2Fv1%2Fimages%2Fb5da8e4c0046a83b81dbd945719f6b354edd764b.jpeg%3Fregion%3D0%2C0%2C450%2C450&imgrefurl=https%3A%2F%2Ffrozen.disney.com%2Fanna&docid=HSFYyNrARbrbkM&tbnid=YNOFXGKmHCWaDM%3A&vet=10ahUKEwjV27r9ydHkAhXXIDQIHat0Dc0QMwhpKAAwAA..i&w=450&h=450&bih=641&biw=1280&q=anna%20picture&ved=0ahUKEwjV27r9ydHkAhXXIDQIHat0Dc0QMwhpKAAwAA&iact=mrc&uact=8",
+        "photo": "https://lumiere-a.akamaihd.net/v1/images/characters_hero_frozen_anna_winter_552acdfa.jpeg?region=0%2C0%2C1024%2C320",
         "scores": [1, 3, 5, 3, 2, 1, 2, 1, 4, 5]
     },
     {
         "name": "Mary",
-        "photo": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjjzsWVytHkAhX3FTQIHS3-B0cQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.independent.ie%2Fentertainment%2Fmovies%2Fmary-poppins-returns-but-can-she-really-be-reinvented-for-our-modern-era-37602224.html&psig=AOvVaw2XWWb5EV1jAEqqJFgyS-Ro&ust=1568594002206351",
+        "photo": "https://jackiekcooper.com/file/2018/12/marypoppinsreturns.jpg",
         "scores": [1, 1, 3, 3, 2, 1, 5, 5, 5, 1]
     },
     {
         "name": "Alex",
-        "photo": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiIucSqytHkAhUULX0KHe4xCM4QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.independent.co.uk%2Farts-entertainment%2Ffilms%2Ffeatures%2Falex-lawther-interview-old-boys-end-of-the-fucking-world-netflix-oscars-a8792631.html&psig=AOvVaw0v1WQPh2p-uMAOgwJ2pYQq&ust=1568594025383775",
+        "photo": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/02/23/10/alex-lawther.jpg?w968",
         "scores": [1, 1, 3, 3, 2, 1, 5, 5, 5, 1]
     },
     {
         "name": "Tom",
-        "photo": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi-7KG1ytHkAhWKIDQIHQdnAMsQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.planetminecraft.com%2Fskin%2Finieloo-tom-tom-amp-jerry%2F&psig=AOvVaw0Wcq6m7gLJPuvajmWqVk_l&ust=1568594068833696",
+        "photo": "http://vignette2.wikia.nocookie.net/tomandjerry/images/b/bd/TomCatHeader.PNG/revision/latest?cb=20130813013330",
         "scores": [1, 3, 5, 1, 2, 5, 5, 1, 3, 4]
     },
     {
         "name": "Mark",
-        "photo": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi24o7AytHkAhW5IjQIHakvBCEQjRx6BAgBEAQ&url=https%3A%2F%2Fjoke-battles.fandom.com%2Fwiki%2FMark_Zuckerberg&psig=AOvVaw3f0vmgPCAYOV6DBbXZZ93T&ust=1568594089444371",
+        "photo": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg",
         "scores": [4, 3, 1, 3, 1, 5, 2, 2, 5, 1]
     },
     {
-        "name": "Tanya",
-        "photo": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiK3-DVytHkAhVlMn0KHaM3CWwQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.imdb.com%2Fname%2Fnm2117238%2F&psig=AOvVaw34rvO4pXO8qwMqjW5sDyDF&ust=1568594113029156",
+        "name": "Alice",
+        "photo": "https://vignette.wikia.nocookie.net/thedescendants/images/7/73/Alice_Render.png/revision/latest?cb=20181113184339",
         "scores": [3, 1, 5, 5, 3, 5, 1, 3, 4, 3]
     },
     {
         "name": "Sophie",
-        "photo": "https://s31242.pcdn.co/wp-content/uploads/2019/05/sophie_turner_loves_soul_not_gender_game_of_thrones-1024x681.jpg",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Sophie_Turner_%2840553145603%29_%28cropped%29.jpg",
         "scores": [3, 2, 4, 1, 5, 5, 1, 1, 1, 1]
     },
     {
         "name": "John",
-        "photo": "https://www.biography.com/.image/t_share/MTE4MDAzNDEwMjg5NDYwNzUw/john-legend-201302-1-402.jpg",
+        "photo": "https://i1.wp.com/metro.co.uk/wp-content/uploads/2019/04/SEI_601281802.jpg?quality=90&strip=all&zoom=1&resize=644%2C428&ssl=1",
         "scores": [2, 4, 1, 4, 3, 3, 1, 3, 1, 1]
     },
     {
-        "name": "Deborah",
-        "photo": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwihkPX5ytHkAhXLHDQIHbhhC88QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.bfi.org.uk%2Fnews-opinion%2Fnews-bfi%2Flists%2Fdeborah-kerr-10-essential-films&psig=AOvVaw3CO15mbUteaS99g-259iqH&ust=1568594210838032",
+        "name": "Elizabeth",
+        "photo": "https://www.forces.net/sites/default/files/styles/cover_image/public/Queen%20Elizabeth%20II%20smiles%20during%20a%20visit%20to%20Chester%20on%20June%2014%2C%202018%20040919%20CREDIT%20PA%20images%20.jpg?itok=D4C9Tys1",
         "scores": [3, 3, 3, 3, 1, 3, 5, 5, 5, 1]
     },
     {
-        "name": "Mitch",
-        "photo": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiWt9iGy9HkAhXcGTQIHQT7BaQQjRx6BAgBEAQ&url=https%3A%2F%2Fthehill.com%2Fpeople%2Fmitch-mcconnell&psig=AOvVaw2TQUn2I4EVLhD20IBDUujD&ust=1568594237659523",
+        "name": "Peter",
+        "photo": "http://www.cartoonbucket.com/wp-content/uploads/2016/07/Image-Of-Peterpen.jpeg",
         "scores": [5, 5, 5, 5, 1, 1, 2, 3, 2, 4]
     },
 ];
