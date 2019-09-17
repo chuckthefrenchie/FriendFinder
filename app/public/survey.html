@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <!-- font awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 
   <!-- chosen -->
@@ -170,24 +170,24 @@
   <!--modal-->
 
   <div id="results-modal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
+    <div class="modal-dialog">
 
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h2 class="modal-title text-center"><strong>Your Best Match</strong></h2>
-          </div>
-          <div class="modal-body text-center">
-            <h2 id="match-name"></h2>
-            <img class="img-fluid" style="max-width: 100%; height: auto" id="match-img" src="" alt="">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title text-center"><strong>Your Best Match</strong></h2>
         </div>
-  
+        <div class="modal-body text-center">
+          <h2 id="match-name"></h2>
+          <img class="img-fluid" style="max-width: 100%; height: auto" id="match-img" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
+
     </div>
+  </div>
 
   </div>
 
@@ -214,17 +214,17 @@
     }
 
     // submit button
-    $("#submit").on("click", function(event) {
+    $("#submit").on("click", function (event) {
       event.preventDefault();
       // validation
       function validateForm() {
         var isValid = true;
-        $(".form-control").each(function() {
+        $(".form-control").each(function () {
           if ($(this).val() === "") {
             isValid = false;
           }
         });
-        $(".chosen-select").each(function() {
+        $(".chosen-select").each(function () {
           if ($(this).val() === "") {
             isValid = false;
           }
@@ -249,11 +249,11 @@
           ]
         };
         // AJAX
-        $.post("/api/friends", userData, function(data) {
-         
+        $.post("/api/friends", userData, function (data) {
+
           $("#match-name").text(data.name);
           $("#match-img").attr("src", data.photo);
-          
+
           // best match
           $("#results-modal").modal("toggle");
           console.log(data.name);
